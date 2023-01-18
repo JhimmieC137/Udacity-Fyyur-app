@@ -1,0 +1,17 @@
+{% extends 'layouts/main.html' %}
+{% block title %}Fyyur | Venues Search{% endblock %}
+{% block content %}
+<h3>Number of search results for "{{ search_term }}": {{ number_of_results }}</h3>
+<ul class="items">
+	{% for result in results %}
+	<li>
+		<a href="/venues/{{ result.id }}">
+			<i class="fas fa-music"></i>
+			<div class="item">
+				<h5>{{ result.name }}</h5>
+			</div>
+		</a>
+	</li>
+	{% endfor %}
+</ul>
+{% endblock %}
